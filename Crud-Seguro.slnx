@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="Crud-Seguro/Crud-Seguro.csproj" Id="e58f3abe-4975-472e-bf9b-fede8cff9b29" />
+  <Project Path="Backend/CrudSeguro.Backend.csproj" Id="8d02c703-3614-4afe-9379-78ecf0bdd221" />
+  <Project Path="Crud-Seguro/CrudSeguro.Frontend.csproj" Id="e58f3abe-4975-472e-bf9b-fede8cff9b29" />
+  <Project Path="CrudSeguro.DTOs/CrudSeguro.DTOs.csproj" Id="57c6b97a-a4a7-4a76-93a6-1d5c16ba85cd" />
+  <Project Path="DataBase/CrudSeguro.DataBase.csproj" Id="265fa4e3-57ee-4bee-8a4f-6a4b1ebcfa0e" />
 </Solution>

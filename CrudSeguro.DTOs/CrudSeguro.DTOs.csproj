@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E58F3ABE-4975-472E-BF9B-FEDE8CFF9B29}</ProjectGuid>
+    <ProjectGuid>{57C6B97A-A4A7-4A76-93A6-1D5C16BA85CD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Crud_Seguro</RootNamespace>
-    <AssemblyName>Crud-Seguro</AssemblyName>
+    <RootNamespace>CrudSeguro.DTOs</RootNamespace>
+    <AssemblyName>CrudSeguro.DTOs</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
