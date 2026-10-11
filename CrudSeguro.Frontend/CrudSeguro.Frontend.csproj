@@ -77,7 +77,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Backend\CrudSeguro.Backend.csproj">
+    <ProjectReference Include="..\CrudSeguro.Backend\CrudSeguro.Backend.csproj">
       <Project>{8d02c703-3614-4afe-9379-78ecf0bdd221}</Project>
       <Name>CrudSeguro.Backend</Name>
     </ProjectReference>
