@@ -145,7 +145,7 @@
             this.textUser.PlaceholderText = "";
             this.textUser.SelectedText = "";
             this.textUser.Size = new System.Drawing.Size(254, 49);
-            this.textUser.TabIndex = 8;
+            this.textUser.TabIndex = 0;
             this.textUser.TextChanged += new System.EventHandler(this.textUser_TextChanged);
             // 
             // textPassword
@@ -171,7 +171,7 @@
             this.textPassword.PlaceholderText = "";
             this.textPassword.SelectedText = "";
             this.textPassword.Size = new System.Drawing.Size(254, 49);
-            this.textPassword.TabIndex = 7;
+            this.textPassword.TabIndex = 1;
             this.textPassword.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // btnIngresar
@@ -187,7 +187,7 @@
             this.btnIngresar.Location = new System.Drawing.Point(522, 341);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(217, 45);
-            this.btnIngresar.TabIndex = 9;
+            this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
@@ -224,6 +224,7 @@
             this.lblErrorPassword.TabIndex = 12;
             this.lblErrorPassword.Text = "Error";
             this.lblErrorPassword.Visible = false;
+            this.lblErrorPassword.Click += new System.EventHandler(this.lblErrorPassword_Click);
             // 
             // UILogin
             // 

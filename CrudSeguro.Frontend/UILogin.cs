@@ -118,5 +118,10 @@ namespace Crud_Seguro
         {
 
         }
+
+        private void lblErrorPassword_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
