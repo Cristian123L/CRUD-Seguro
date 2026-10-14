@@ -10,7 +10,12 @@ namespace DataBase
     internal class ConexionBD
     {
         private static readonly string CadenaConexion =
-            "Server=localhost;Port=3306;Database=crud_seguro;Uid=cris;Pwd=lara#12114051;SslMode=Required;";
+            "Server=santyuwu.mysql.database.azure.com;" +
+            "Port=3306;" +
+            "Database=crud_seguro;" +
+            "Uid=cris;" +
+            "Pwd=lara#12114051;" +
+            "SslMode=Required;";
 
         public static MySqlConnection ObtenerConexion()
         {

@@ -165,8 +165,8 @@ namespace Crud_Seguro
 
         private void MostrarError(string mensaje)
         {
-            lblError.Text = mensaje;
-            lblError.Visible = true;
+            //lblError.Text = mensaje;
+            //lblError.Visible = true;
         }
 
         private void guna2TextBox1_TextChanged_2(object sender, EventArgs e)

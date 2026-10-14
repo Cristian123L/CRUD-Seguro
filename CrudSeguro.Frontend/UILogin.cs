@@ -60,12 +60,12 @@ namespace Crud_Seguro
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            // 1. Ocultar la etiqueta de error al iniciar
+            // 1. Ocultar las etiquetas de error al iniciar
             lblError.Visible = false;
             lblErrorUser.Visible = false;
             lblErrorPassword.Visible = false;
 
-            //2.Validar llenado de datos
+            // 2. Validar llenado de datos
             if (string.IsNullOrWhiteSpace(textUser.Text) && string.IsNullOrWhiteSpace(textPassword.Text))
             {
                 MostrarError("Por favor, ingrese su usuario y contraseña.");
@@ -76,31 +76,37 @@ namespace Crud_Seguro
             {
                 lblErrorUser.Text = "Ingrese el Usuario";
                 lblErrorUser.Visible = true;
+                return; // Detiene la ejecución si falta el usuario
             }
-            if(string.IsNullOrWhiteSpace(textPassword.Text))
+
+            if (string.IsNullOrWhiteSpace(textPassword.Text))
             {
                 lblErrorPassword.Text = "Ingrese la Contraseña";
                 lblErrorPassword.Visible = true;
+                return; // Detiene la ejecución si falta la contraseña
             }
 
-
+            // 3. Autenticar con el Backend
             AuthService authService = new AuthService();
+            bool loginExitoso = authService.IniciarSesion(textUser.Text.Trim(), textPassword.Text);
 
-            bool loginExitoso = authService.IniciarSesion(textUser.Text,textPassword.Text);
-            if(loginExitoso)
+            if (loginExitoso)
             {
-                MessageBox.Show("Acceso concedido. Preparando el menú principal...", "Éxito",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Aquí luego programaremos el código para ocultar el Login y
-                // abrir el menú
+                // Ocultar el Login y abrir el Menú Principal
+                UIMenuPrincipal menu = new UIMenuPrincipal();
+                this.Hide();
+                menu.ShowDialog();
+
+                // Al cerrar sesión en el menú, limpiar contraseña y volver a mostrar el Login
+                textPassword.Clear();
+                this.Show();
             }
             else
             {
                 MostrarError("Usuario o contraseña incorrectos.");
             }
-
         }
-        
+
 
         // Método auxiliar para no repetir código
         private void MostrarError(string mensaje)
