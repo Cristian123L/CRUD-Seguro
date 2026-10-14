@@ -59,12 +59,12 @@ namespace Crud_Seguro
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            lblError.Visible = false;
+            //lblError.Visible = false;
 
             // 1. Validación de llenado (Campos vacíos generales)
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                string.IsNullOrWhiteSpace(txtApellidos.Text) ||
-                string.IsNullOrWhiteSpace(txtCorreo.Text) ||
+                string.IsNullOrWhiteSpace(txtPrimerApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
                 string.IsNullOrWhiteSpace(txtPassword.Text) ||
                 string.IsNullOrWhiteSpace(txtDireccion.Text))
             {
