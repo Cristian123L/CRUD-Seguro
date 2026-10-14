@@ -42,8 +42,8 @@
             this.txtDireccion = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbCiudad = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtCP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEstado = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCodigoPostal = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSalario = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbRol = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -110,7 +110,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.Location = new System.Drawing.Point(289, 70);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceholderText = "";
             this.txtNombre.SelectedText = "";
@@ -129,8 +129,8 @@
             this.txtPrimerApellido.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrimerApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPrimerApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrimerApellido.Location = new System.Drawing.Point(289, 126);
-            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrimerApellido.Location = new System.Drawing.Point(290, 131);
+            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.PlaceholderText = "";
             this.txtPrimerApellido.SelectedText = "";
@@ -149,8 +149,8 @@
             this.txtSegundoApellido.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSegundoApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSegundoApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSegundoApellido.Location = new System.Drawing.Point(288, 182);
-            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSegundoApellido.Location = new System.Drawing.Point(289, 191);
+            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.PlaceholderText = "";
             this.txtSegundoApellido.SelectedText = "";
@@ -170,8 +170,8 @@
             this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(288, 238);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Location = new System.Drawing.Point(289, 247);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
@@ -190,8 +190,8 @@
             this.txtTelefono.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTelefono.Location = new System.Drawing.Point(288, 350);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Location = new System.Drawing.Point(289, 359);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PlaceholderText = "Ej: 5512345678";
@@ -213,8 +213,8 @@
             this.txtNSS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNSS.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNSS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNSS.Location = new System.Drawing.Point(971, 126);
-            this.txtNSS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNSS.Location = new System.Drawing.Point(972, 131);
+            this.txtNSS.Margin = new System.Windows.Forms.Padding(4);
             this.txtNSS.MaxLength = 11;
             this.txtNSS.Name = "txtNSS";
             this.txtNSS.PlaceholderText = "11 dígitos numéricos";
@@ -237,7 +237,7 @@
             this.txtRFC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtRFC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRFC.Location = new System.Drawing.Point(971, 70);
-            this.txtRFC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRFC.Margin = new System.Windows.Forms.Padding(4);
             this.txtRFC.MaxLength = 13;
             this.txtRFC.Name = "txtRFC";
             this.txtRFC.PlaceholderText = "";
@@ -257,8 +257,8 @@
             this.txtDireccion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDireccion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDireccion.Location = new System.Drawing.Point(640, 238);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDireccion.Location = new System.Drawing.Point(641, 247);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.MaxLength = 250;
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
@@ -281,10 +281,13 @@
             this.cmbCiudad.ItemHeight = 53;
             this.cmbCiudad.Items.AddRange(new object[] {
             "Ciudad",
-            "Ciudad de México",
-            "Monterrey",
-            "Guadalajara"});
-            this.cmbCiudad.Location = new System.Drawing.Point(640, 126);
+            "Uriangato ",
+            "Moroleón",
+            "Yuriria",
+            "León",
+            "Celaya",
+            "Irapuato"});
+            this.cmbCiudad.Location = new System.Drawing.Point(641, 131);
             this.cmbCiudad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCiudad.Name = "cmbCiudad";
             this.cmbCiudad.Size = new System.Drawing.Size(255, 59);
@@ -310,50 +313,50 @@
             this.btnGuardar.Text = "Crear Cuenta";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // guna2TextBox1
+            // txtEstado
             // 
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "Estado";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(640, 182);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox1.MaxLength = 250;
-            this.guna2TextBox1.Multiline = true;
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "Calle, Número exterior/interior, Colonia";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(254, 48);
-            this.guna2TextBox1.TabIndex = 14;
-            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged_2);
+            this.txtEstado.BorderRadius = 10;
+            this.txtEstado.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEstado.DefaultText = "Estado";
+            this.txtEstado.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEstado.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEstado.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEstado.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEstado.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEstado.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEstado.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEstado.Location = new System.Drawing.Point(641, 191);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEstado.MaxLength = 250;
+            this.txtEstado.Multiline = true;
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.PlaceholderText = "Calle, Número exterior/interior, Colonia";
+            this.txtEstado.SelectedText = "";
+            this.txtEstado.Size = new System.Drawing.Size(254, 48);
+            this.txtEstado.TabIndex = 14;
+            this.txtEstado.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged_2);
             // 
-            // txtCP
+            // txtCodigoPostal
             // 
-            this.txtCP.BorderRadius = 10;
-            this.txtCP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCP.DefaultText = "Código Postal";
-            this.txtCP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCP.Location = new System.Drawing.Point(640, 294);
-            this.txtCP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtCP.MaxLength = 5;
-            this.txtCP.Name = "txtCP";
-            this.txtCP.PlaceholderText = "11 dígitos numéricos";
-            this.txtCP.SelectedText = "";
-            this.txtCP.Size = new System.Drawing.Size(254, 48);
-            this.txtCP.TabIndex = 15;
-            this.txtCP.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged_1);
+            this.txtCodigoPostal.BorderRadius = 10;
+            this.txtCodigoPostal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCodigoPostal.DefaultText = "Código Postal";
+            this.txtCodigoPostal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCodigoPostal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCodigoPostal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCodigoPostal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCodigoPostal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCodigoPostal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCodigoPostal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCodigoPostal.Location = new System.Drawing.Point(641, 303);
+            this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigoPostal.MaxLength = 5;
+            this.txtCodigoPostal.Name = "txtCodigoPostal";
+            this.txtCodigoPostal.PlaceholderText = "11 dígitos numéricos";
+            this.txtCodigoPostal.SelectedText = "";
+            this.txtCodigoPostal.Size = new System.Drawing.Size(254, 48);
+            this.txtCodigoPostal.TabIndex = 15;
+            this.txtCodigoPostal.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged_1);
             // 
             // txtSalario
             // 
@@ -367,8 +370,8 @@
             this.txtSalario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSalario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSalario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSalario.Location = new System.Drawing.Point(640, 350);
-            this.txtSalario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSalario.Location = new System.Drawing.Point(641, 359);
+            this.txtSalario.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalario.MaxLength = 5;
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.PlaceholderText = "11 dígitos numéricos";
@@ -388,8 +391,8 @@
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(289, 294);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Location = new System.Drawing.Point(290, 303);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.MaxLength = 5;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderText = "11 dígitos numéricos";
@@ -431,8 +434,8 @@
             this.txtClabe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClabe.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtClabe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtClabe.Location = new System.Drawing.Point(971, 182);
-            this.txtClabe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClabe.Location = new System.Drawing.Point(972, 191);
+            this.txtClabe.Margin = new System.Windows.Forms.Padding(4);
             this.txtClabe.MaxLength = 11;
             this.txtClabe.Name = "txtClabe";
             this.txtClabe.PlaceholderText = "11 dígitos numéricos";
@@ -449,8 +452,8 @@
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtSalario);
-            this.Controls.Add(this.txtCP);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.txtCodigoPostal);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cmbCiudad);
             this.Controls.Add(this.txtNSS);
@@ -492,8 +495,8 @@
         private Guna.UI2.WinForms.Guna2TextBox txtDireccion;
         private Guna.UI2.WinForms.Guna2ComboBox cmbCiudad;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2TextBox txtCP;
+        private Guna.UI2.WinForms.Guna2TextBox txtEstado;
+        private Guna.UI2.WinForms.Guna2TextBox txtCodigoPostal;
         private Guna.UI2.WinForms.Guna2TextBox txtSalario;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2ComboBox cmbRol;

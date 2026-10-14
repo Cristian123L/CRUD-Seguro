@@ -11,7 +11,7 @@ namespace CrudSeguro.Backend
         private readonly UsuarioDAO _usuarioDAO = new UsuarioDAO();
 
         // 1. REGISTRAR CON VALIDACIONES ESTRICTAS
-        public string RegistrarUsuario(UsuarioDTO u)
+        public string RegistrarUsuario(CrudSeguro.DTOs.UsuarioDTO u)
         {
             // Validar campos vacíos
             if (string.IsNullOrWhiteSpace(u.Nombre) || string.IsNullOrWhiteSpace(u.PrimerApellido) ||

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrudSeguro.Backend;
+using CrudSeguro.DTOs;
 
 namespace Crud_Seguro
 {
@@ -57,6 +59,8 @@ namespace Crud_Seguro
 
         }
 
+        private readonly UsuarioService _usuarioService = new UsuarioService();
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //lblError.Visible = false;
@@ -64,9 +68,12 @@ namespace Crud_Seguro
             // 1. Validación de llenado (Campos vacíos generales)
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtPrimerApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtSegundoApellido.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
                 string.IsNullOrWhiteSpace(txtPassword.Text) ||
-                string.IsNullOrWhiteSpace(txtDireccion.Text))
+                string.IsNullOrWhiteSpace(txtEstado.Text) ||
+                string.IsNullOrWhiteSpace(txtDireccion.Text) ||
+                string.IsNullOrWhiteSpace(txtCodigoPostal.Text))
             {
                 MostrarError("Todos los campos de texto principales son obligatorios.");
                 return;
@@ -75,7 +82,7 @@ namespace Crud_Seguro
             // 2. Validación de Listas Desplegables (ComboBox)
             if (cmbRol.SelectedIndex == -1) // Roles obligatorios
             {
-                MostrarError("Debe seleccionar si el rol es administrador o empleado.");
+                MostrarError("Debe seleccionar si el rol es Administrador o Empleado.");
                 return;
             }
 
@@ -85,7 +92,7 @@ namespace Crud_Seguro
                 return;
             }
 
-            // 3. Validación de Longitudes Mínimas y Exactas
+            // 3. Validación de Longitudes Mínimas, Exactas y Salario numérico
             if (txtPassword.Text.Length < 6)
             {
                 MostrarError("La contraseña debe tener al menos 6 caracteres.");
@@ -95,6 +102,12 @@ namespace Crud_Seguro
             if (txtTelefono.Text.Length != 10)
             {
                 MostrarError("El teléfono debe tener exactamente 10 dígitos.");
+                return;
+            }
+
+            if (!decimal.TryParse(txtSalario.Text.Trim(), out decimal salarioValido) || salarioValido <= 0)
+            {
+                MostrarError("Ingrese un salario numérico válido mayor a 0.");
                 return;
             }
 
@@ -117,8 +130,37 @@ namespace Crud_Seguro
                 return;
             }
 
-            // Si pasa todas las validaciones, se procede a llamar al Backend
-            // UsuarioService.RegistrarUsuario(txtNombre.Text, txtPassword.Text, ...);
+            // 5. Empaquetar en el DTO y llamar al Backend
+            UsuarioDTO nuevoUsuario = new UsuarioDTO
+            {
+                Nombre = txtNombre.Text.Trim(),
+                PrimerApellido = txtPrimerApellido.Text.Trim(),
+                SegundoApellido = txtSegundoApellido.Text.Trim(),
+                Email = txtEmail.Text.Trim(),
+                Password = txtPassword.Text,
+                Telefono = txtTelefono.Text.Trim(),
+                Rol = cmbRol.SelectedItem.ToString(),
+                Ciudad = cmbCiudad.SelectedItem.ToString(),
+                Estado = txtEstado.Text.Trim(),
+                Direccion = txtDireccion.Text.Trim(),
+                CodigoPostal = txtCodigoPostal.Text.Trim(),
+                Salario = salarioValido,
+                RFC = txtRFC.Text.Trim().ToUpper(),
+                NSS = txtNSS.Text.Trim(),
+                ClabeInterbancaria = txtClabe.Text.Trim()
+            };
+
+            string resultado = _usuarioService.RegistrarUsuario(nuevoUsuario);
+
+            if (resultado == "OK")
+            {
+                MessageBox.Show("¡Usuario registrado exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close(); // O llama a tu método para limpiar cajas de texto
+            }
+            else
+            {
+                MostrarError(resultado);
+            }
         }
 
         private void MostrarError(string mensaje)
