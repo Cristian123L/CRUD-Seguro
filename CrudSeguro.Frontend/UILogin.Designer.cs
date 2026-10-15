@@ -187,7 +187,7 @@
             this.textPassword.IconLeft = global::Crud_Seguro.Properties.Resources.password_29dp_D08370_FILL0_wght400_GRAD0_opsz24;
             this.textPassword.IconLeftOffset = new System.Drawing.Point(5, 0);
             this.textPassword.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.textPassword.Location = new System.Drawing.Point(444, 187);
+            this.textPassword.Location = new System.Drawing.Point(444, 190);
             this.textPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
