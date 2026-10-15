@@ -15,8 +15,10 @@ namespace Crud_Seguro
         }
 
         // CARGA Y CONFIGURACIÓN INICIAL
-        
-        private void UIMenuPrincipal_Load(object sender, EventArgs e)
+        private void UIMenuPrincipal_Load(object sender, EventArgs e) { PrepararVentana(); }
+        private void UIMenuPrincipal_Load_1(object sender, EventArgs e) { PrepararVentana(); }
+
+        private void PrepararVentana()
         {
             // Restricción de permisos según el rol
             if (SesionActual.Rol == "Empleado")
@@ -26,11 +28,8 @@ namespace Crud_Seguro
                 btnEliminar.Enabled = false;
             }
 
-            CargarGrid();
+            CargarGrid(); 
         }
-
-        // Metodo vacío dejado por si el diseñador visual lo enlazó accidentalmente
-        private void UIMenuPrincipal_Load_1(object sender, EventArgs e) { }
 
         private void CargarGrid()
         {
@@ -42,14 +41,13 @@ namespace Crud_Seguro
         }
 
         // EVENTOS DE BOTONES (CRUD)
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             UIRegistroUsuarios formRegistro = new UIRegistroUsuarios();
-
             this.Hide();
             formRegistro.ShowDialog();
 
-            // Al cerrar el registro, regresamos aquí automáticamente
             this.Show();
             CargarGrid();
         }
@@ -93,7 +91,7 @@ namespace Crud_Seguro
                 }
                 else
                 {
-                    MessageBox.Show("Detalle del error: " + res, "Error de Base de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Detalle del error: " + res, "Error de BD", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -101,9 +99,12 @@ namespace Crud_Seguro
         // SALIDA
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            UIRegistroUsuarios ventanaLogin = new UIRegistroUsuarios();
+            SesionActual.CerrarSesion();
+
+            UILogin ventanaLogin = new UILogin();
             ventanaLogin.Show();
-            this.Close();
+
+            this.Close(); // Cierra el menú principal para liberar memoria
         }
     }
 }

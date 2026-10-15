@@ -15,7 +15,7 @@ namespace CrudSeguro.Backend
             if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(passwordFrontend))
                 return false;
 
-            // 1. Encriptar la contraseña recibida con SHA-256 (código de tu compañero)
+            // 1. Encriptar la contraseña recibida con SHA-256 
             string passwordEncriptada = EncriptarSHA256(passwordFrontend);
 
             // 2. Verificar en Base de Datos

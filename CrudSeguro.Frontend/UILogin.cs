@@ -69,21 +69,21 @@ namespace Crud_Seguro
             if (string.IsNullOrWhiteSpace(textUser.Text) && string.IsNullOrWhiteSpace(textPassword.Text))
             {
                 MostrarError("Por favor, ingrese su usuario y contraseña.");
-                return; // Detiene la ejecución
+                return; 
             }
 
             if (string.IsNullOrWhiteSpace(textUser.Text))
             {
                 lblErrorUser.Text = "Ingrese el Usuario";
                 lblErrorUser.Visible = true;
-                return; // Detiene la ejecución si falta el usuario
+                return; 
             }
 
             if (string.IsNullOrWhiteSpace(textPassword.Text))
             {
                 lblErrorPassword.Text = "Ingrese la Contraseña";
                 lblErrorPassword.Visible = true;
-                return; // Detiene la ejecución si falta la contraseña
+                return; 
             }
 
             // 3. Autenticar con el Backend
@@ -108,7 +108,7 @@ namespace Crud_Seguro
         }
 
 
-        // Método auxiliar para no repetir código
+        
         private void MostrarError(string mensaje)
         {
             lblError.Text = mensaje;
@@ -134,7 +134,7 @@ namespace Crud_Seguro
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                e.Handled = true; // Esto evita que suene el molesto "beep" de error de Windows
+                e.Handled = true; // Para que no suene el tipico sonido de windows
                 btnIngresar.PerformClick(); // Simula que presionaste el botón Guardar
             }
         }

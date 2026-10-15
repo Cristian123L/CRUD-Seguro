@@ -37,7 +37,7 @@ namespace Crud_Seguro
                 txtSalario.Text = _usuarioEdicion.Salario.ToString();
 
                 // Campos sensibles
-                txtPassword.Text = ""; // Por seguridad se limpia
+                txtPassword.Text = "";
                 txtRFC.Text = _usuarioEdicion.RFC;
                 txtNSS.Text = _usuarioEdicion.NSS;
                 txtClabe.Text = _usuarioEdicion.ClabeInterbancaria;
@@ -46,10 +46,11 @@ namespace Crud_Seguro
             }
         }
 
+        // ====================================================================
         // EVENTO PRINCIPAL: GUARDAR / ACTUALIZAR
+        // ====================================================================
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // 1. Validación de llenado (Password opcional si es edición)
             bool faltaPassword = (_usuarioEdicion == null) && string.IsNullOrWhiteSpace(txtPassword.Text);
 
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
@@ -65,7 +66,6 @@ namespace Crud_Seguro
                 return;
             }
 
-            // 2. Validación de Listas Desplegables
             if (cmbRol.SelectedIndex == -1)
             {
                 MostrarError("Debe seleccionar si el rol es Administrador o Empleado.");
@@ -78,7 +78,6 @@ namespace Crud_Seguro
                 return;
             }
 
-            // 3. Validación de Longitudes y Formatos
             if ((_usuarioEdicion == null || !string.IsNullOrWhiteSpace(txtPassword.Text)) && txtPassword.Text.Length < 6)
             {
                 MostrarError("La contraseña debe tener al menos 6 caracteres.");
@@ -97,7 +96,6 @@ namespace Crud_Seguro
                 return;
             }
 
-            // 4. Validación estricta de campos cifrados (Haciéndolo insensible a mayúsculas)
             bool rfcModificado = !txtRFC.Text.ToUpper().Contains("(CIFRADO)") && !txtRFC.Text.Contains("•");
             bool nssModificado = !txtNSS.Text.ToUpper().Contains("(CIFRADO)") && !txtNSS.Text.Contains("•");
             bool clabeModificada = !txtClabe.Text.ToUpper().Contains("(CIFRADO)") && !txtClabe.Text.Contains("•");
@@ -129,7 +127,6 @@ namespace Crud_Seguro
                 }
             }
 
-            // 5. Empaquetar en el DTO
             UsuarioDTO nuevoUsuario = new UsuarioDTO
             {
                 Nombre = txtNombre.Text.Trim(),
@@ -144,13 +141,11 @@ namespace Crud_Seguro
                 Direccion = txtDireccion.Text.Trim(),
                 CodigoPostal = txtCodigoPostal.Text.Trim(),
                 Salario = salarioValido,
-                // Si no se modificaron, mantenemos el valor original oculto
                 RFC = (_usuarioEdicion != null && !rfcModificado) ? _usuarioEdicion.RFC : txtRFC.Text.Trim().ToUpper(),
                 NSS = (_usuarioEdicion != null && !nssModificado) ? _usuarioEdicion.NSS : txtNSS.Text.Trim(),
                 ClabeInterbancaria = (_usuarioEdicion != null && !clabeModificada) ? _usuarioEdicion.ClabeInterbancaria : txtClabe.Text.Trim()
             };
 
-            // 6. Enviar a Base de Datos
             string resultado;
 
             if (_usuarioEdicion == null)
@@ -163,13 +158,12 @@ namespace Crud_Seguro
                 resultado = _usuarioService.ActualizarUsuario(nuevoUsuario);
             }
 
-            // 7. Evaluar Respuesta
             if (resultado == "OK")
             {
                 string accion = _usuarioEdicion == null ? "registrado" : "actualizado";
                 MessageBox.Show($"¡Usuario {accion} exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Con esto es suficiente, el UIMenuPrincipal original sigue esperando atrás
+                // Cierra esta ventana. 
                 this.Close();
             }
             else
@@ -178,21 +172,26 @@ namespace Crud_Seguro
             }
         }
 
-        // METODOS AUXILIARES Y EVENTOS DE UI
+        // NAVEGACIÓN Y EVENTOS AUXILIARES
         private void MostrarError(string mensaje)
         {
             MessageBox.Show(mensaje, "Aviso de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        // Cerramos la ventana actual y regresamos al menú principal
         private void btnBack_Click(object sender, EventArgs e)
         {
-            
-            UILogin ventanaLogin = new UILogin();
-            ventanaLogin.Show();
             this.Close();
-
         }
 
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            UIMenuPrincipal menu = new UIMenuPrincipal();
+            menu.Show();
+        }
+
+        // Foco con enter
         private void txtClabe_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -220,12 +219,5 @@ namespace Crud_Seguro
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e) { }
         private void txtDireccion_TextChanged(object sender, EventArgs e) { }
-
-        private void btnUsers_Click(object sender, EventArgs e)
-        {
-            UIMenuPrincipal menu = new UIMenuPrincipal();
-            menu.Show();
-            this.Close();
-        }
     }
 }
