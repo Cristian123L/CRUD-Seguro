@@ -122,14 +122,86 @@ namespace CrudSeguro.DataBase
             return lista;
         }
 
-        public bool EliminarUsuario(int idUsuario)
+        public string EliminarUsuario(int idUsuario)
         {
-            string query = "DELETE FROM usuarios WHERE id_usuario = @id;";
-            using (MySqlConnection conn = ConexionBD.ObtenerConexion())
-            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            try
             {
-                cmd.Parameters.AddWithValue("@id", idUsuario);
-                return cmd.ExecuteNonQuery() > 0;
+                using (var conexion = ConexionBD.ObtenerConexion())
+                {
+                    string query = "DELETE FROM usuarios WHERE id_usuario = @IdUsuario";
+                    using (var comando = new MySqlCommand(query, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                        int filas = comando.ExecuteNonQuery();
+                        return filas > 0 ? "OK" : "No se encontró el registro con ese ID.";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        public bool ActualizarUsuario(UsuarioDTO u)
+        {
+            try
+            {
+                using (var conexion = ConexionBD.ObtenerConexion())
+                {
+                    // Si se escribió contraseña nueva se actualiza con hash; de lo contrario se omite
+                    bool cambiaPassword = !string.IsNullOrWhiteSpace(u.Password);
+                    string sqlPassword = cambiaPassword ? "password = SHA2(@Password, 256), " : "";
+
+                    string query = $@"UPDATE usuarios SET 
+                                    nombre = @Nombre, 
+                                    primer_apellido = @PrimerApellido, 
+                                    segundo_apellido = @SegundoApellido, 
+                                    email = @Email, 
+                                    {sqlPassword}
+                                    telefono = @Telefono, 
+                                    rol = @Rol, 
+                                    ciudad = @Ciudad, 
+                                    estado = @Estado, 
+                                    direccion = @Direccion, 
+                                    codigo_postal = @CodigoPostal, 
+                                    salario = @Salario, 
+                                    rfc = AES_ENCRYPT(@RFC, @llave), 
+                                    nss = AES_ENCRYPT(@NSS, @llave), 
+                                    clabe_interbancaria = AES_ENCRYPT(@Clabe, @llave) 
+                                    WHERE id_usuario = @IdUsuario";
+
+                    using (var comando = new MySqlCommand(query, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@IdUsuario", u.IdUsuario);
+                        comando.Parameters.AddWithValue("@Nombre", u.Nombre);
+                        comando.Parameters.AddWithValue("@PrimerApellido", u.PrimerApellido);
+                        comando.Parameters.AddWithValue("@SegundoApellido", u.SegundoApellido);
+                        comando.Parameters.AddWithValue("@Email", u.Email);
+                        if (cambiaPassword)
+                        {
+                            comando.Parameters.AddWithValue("@Password", u.Password);
+                        }
+                        comando.Parameters.AddWithValue("@Telefono", u.Telefono);
+                        comando.Parameters.AddWithValue("@Rol", u.Rol);
+                        comando.Parameters.AddWithValue("@Ciudad", u.Ciudad);
+                        comando.Parameters.AddWithValue("@Estado", u.Estado);
+                        comando.Parameters.AddWithValue("@Direccion", u.Direccion);
+                        comando.Parameters.AddWithValue("@CodigoPostal", u.CodigoPostal);
+                        comando.Parameters.AddWithValue("@Salario", u.Salario);
+                        comando.Parameters.AddWithValue("@RFC", u.RFC);
+                        comando.Parameters.AddWithValue("@NSS", u.NSS);
+                        comando.Parameters.AddWithValue("@Clabe", u.ClabeInterbancaria);
+                        comando.Parameters.AddWithValue("@llave", LlaveAES);
+
+                        int filasAfectadas = comando.ExecuteNonQuery();
+                        return filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

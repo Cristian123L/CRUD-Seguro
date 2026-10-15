@@ -129,5 +129,31 @@ namespace Crud_Seguro
         {
 
         }
+
+        private void textPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; // Esto evita que suene el molesto "beep" de error de Windows
+                btnIngresar.PerformClick(); // Simula que presionaste el botón Guardar
+            }
+        }
+
+        private void textUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}"); // Mueve el foco al siguiente control
+            }
+        }
+
+        private void btnAccess_Click(object sender, EventArgs e)
+        {
+            UIRegistroUsuarios frmRegistro = new UIRegistroUsuarios();
+            this.Hide();
+            frmRegistro.ShowDialog();
+            this.Show();
+        }
     }
 }

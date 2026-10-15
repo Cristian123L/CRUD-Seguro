@@ -84,12 +84,27 @@ namespace CrudSeguro.Backend
         }
 
         // 3. ELIMINAR USUARIO (Solo Administrador)
-        public bool EliminarUsuario(int idUsuario)
+        public string EliminarUsuario(int idUsuario)
         {
-            if (SesionActual.Rol != "Administrador")
-                return false;
-
             return _usuarioDAO.EliminarUsuario(idUsuario);
+        }
+
+        public string ActualizarUsuario(UsuarioDTO u)
+        {
+            try
+            {
+                // Llama al DAO para ejecutar el UPDATE en la base de datos
+                bool exito = _usuarioDAO.ActualizarUsuario(u);
+
+                if (exito)
+                    return "OK";
+                else
+                    return "Error al actualizar el usuario en la base de datos.";
+            }
+            catch (Exception ex)
+            {
+                return "Excepción al actualizar: " + ex.Message;
+            }
         }
     }
 }

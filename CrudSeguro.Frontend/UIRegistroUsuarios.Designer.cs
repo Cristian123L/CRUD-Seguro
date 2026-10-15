@@ -48,6 +48,8 @@
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbRol = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtClabe = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUsers = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(267, 480);
-            this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel1.TabIndex = 16;
             // 
             // Title
             // 
@@ -72,7 +74,7 @@
             this.Title.Location = new System.Drawing.Point(23, 250);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(199, 46);
-            this.Title.TabIndex = 4;
+            this.Title.TabIndex = 0;
             this.Title.Text = "CrudSeguro";
             // 
             // pictureBox1
@@ -93,7 +95,7 @@
             this.NuevoUsuario.Location = new System.Drawing.Point(608, 7);
             this.NuevoUsuario.Name = "NuevoUsuario";
             this.NuevoUsuario.Size = new System.Drawing.Size(519, 48);
-            this.NuevoUsuario.TabIndex = 1;
+            this.NuevoUsuario.TabIndex = 17;
             this.NuevoUsuario.Text = "Registro de Nuevo Usuario";
             this.NuevoUsuario.Click += new System.EventHandler(this.NuevoUsuario_Click);
             // 
@@ -101,7 +103,7 @@
             // 
             this.txtNombre.BorderRadius = 10;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombre.DefaultText = "Nombre";
+            this.txtNombre.DefaultText = "";
             this.txtNombre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtNombre.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtNombre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -112,16 +114,17 @@
             this.txtNombre.Location = new System.Drawing.Point(289, 70);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.PlaceholderText = "";
+            this.txtNombre.PlaceholderText = "Nombre";
             this.txtNombre.SelectedText = "";
             this.txtNombre.Size = new System.Drawing.Size(254, 48);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 0;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtPrimerApellido
             // 
             this.txtPrimerApellido.BorderRadius = 10;
             this.txtPrimerApellido.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPrimerApellido.DefaultText = "Primer Apellido";
+            this.txtPrimerApellido.DefaultText = "";
             this.txtPrimerApellido.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPrimerApellido.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPrimerApellido.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -132,16 +135,17 @@
             this.txtPrimerApellido.Location = new System.Drawing.Point(290, 131);
             this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrimerApellido.Name = "txtPrimerApellido";
-            this.txtPrimerApellido.PlaceholderText = "";
+            this.txtPrimerApellido.PlaceholderText = "Primer Apellido";
             this.txtPrimerApellido.SelectedText = "";
             this.txtPrimerApellido.Size = new System.Drawing.Size(254, 48);
-            this.txtPrimerApellido.TabIndex = 3;
+            this.txtPrimerApellido.TabIndex = 1;
+            this.txtPrimerApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtSegundoApellido
             // 
             this.txtSegundoApellido.BorderRadius = 10;
             this.txtSegundoApellido.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSegundoApellido.DefaultText = "Segundo Apellido";
+            this.txtSegundoApellido.DefaultText = "";
             this.txtSegundoApellido.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtSegundoApellido.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtSegundoApellido.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -152,17 +156,18 @@
             this.txtSegundoApellido.Location = new System.Drawing.Point(289, 191);
             this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtSegundoApellido.Name = "txtSegundoApellido";
-            this.txtSegundoApellido.PlaceholderText = "";
+            this.txtSegundoApellido.PlaceholderText = "Segundo Apellido";
             this.txtSegundoApellido.SelectedText = "";
             this.txtSegundoApellido.Size = new System.Drawing.Size(254, 48);
-            this.txtSegundoApellido.TabIndex = 4;
+            this.txtSegundoApellido.TabIndex = 2;
             this.txtSegundoApellido.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.txtSegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtEmail
             // 
             this.txtEmail.BorderRadius = 10;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultText = "Email";
+            this.txtEmail.DefaultText = "";
             this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -173,16 +178,17 @@
             this.txtEmail.Location = new System.Drawing.Point(289, 247);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.PlaceholderText = "Email";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(254, 48);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtTelefono
             // 
             this.txtTelefono.BorderRadius = 10;
             this.txtTelefono.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefono.DefaultText = "Teléfono";
+            this.txtTelefono.DefaultText = "";
             this.txtTelefono.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtTelefono.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtTelefono.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -194,18 +200,18 @@
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.PlaceholderText = "Ej: 5512345678";
+            this.txtTelefono.PlaceholderText = "Teléfono (10 digitos)";
             this.txtTelefono.SelectedText = "";
             this.txtTelefono.Size = new System.Drawing.Size(254, 48);
-            this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.TabIndex = 5;
             this.txtTelefono.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged_1);
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtNSS
             // 
             this.txtNSS.BorderRadius = 10;
             this.txtNSS.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNSS.DefaultText = "Número de Seguridad Social";
+            this.txtNSS.DefaultText = "";
             this.txtNSS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtNSS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtNSS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -217,18 +223,19 @@
             this.txtNSS.Margin = new System.Windows.Forms.Padding(4);
             this.txtNSS.MaxLength = 11;
             this.txtNSS.Name = "txtNSS";
-            this.txtNSS.PlaceholderText = "11 dígitos numéricos";
+            this.txtNSS.PlaceholderText = "NSS (11 digitos)";
             this.txtNSS.SelectedText = "";
             this.txtNSS.Size = new System.Drawing.Size(254, 48);
-            this.txtNSS.TabIndex = 10;
+            this.txtNSS.TabIndex = 13;
             this.txtNSS.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
+            this.txtNSS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtRFC
             // 
             this.txtRFC.BorderRadius = 10;
             this.txtRFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtRFC.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRFC.DefaultText = "RFC";
+            this.txtRFC.DefaultText = "";
             this.txtRFC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtRFC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtRFC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -240,16 +247,17 @@
             this.txtRFC.Margin = new System.Windows.Forms.Padding(4);
             this.txtRFC.MaxLength = 13;
             this.txtRFC.Name = "txtRFC";
-            this.txtRFC.PlaceholderText = "";
+            this.txtRFC.PlaceholderText = "RFC (12 o 13 caracteres)";
             this.txtRFC.SelectedText = "";
             this.txtRFC.Size = new System.Drawing.Size(254, 48);
-            this.txtRFC.TabIndex = 9;
+            this.txtRFC.TabIndex = 12;
+            this.txtRFC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtDireccion
             // 
             this.txtDireccion.BorderRadius = 10;
             this.txtDireccion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDireccion.DefaultText = "Dirección";
+            this.txtDireccion.DefaultText = "";
             this.txtDireccion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtDireccion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDireccion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -262,11 +270,12 @@
             this.txtDireccion.MaxLength = 250;
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.PlaceholderText = "Calle, Número exterior/interior, Colonia";
+            this.txtDireccion.PlaceholderText = "Dirección";
             this.txtDireccion.SelectedText = "";
             this.txtDireccion.Size = new System.Drawing.Size(254, 48);
-            this.txtDireccion.TabIndex = 8;
+            this.txtDireccion.TabIndex = 9;
             this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // cmbCiudad
             // 
@@ -292,8 +301,9 @@
             this.cmbCiudad.Name = "cmbCiudad";
             this.cmbCiudad.Size = new System.Drawing.Size(255, 59);
             this.cmbCiudad.StartIndex = 0;
-            this.cmbCiudad.TabIndex = 12;
+            this.cmbCiudad.TabIndex = 7;
             this.cmbCiudad.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            this.cmbCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // btnGuardar
             // 
@@ -303,21 +313,21 @@
             this.btnGuardar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGuardar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnGuardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(131)))), ((int)(((byte)(112)))));
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(921, 294);
+            this.btnGuardar.Location = new System.Drawing.Point(972, 250);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(371, 70);
-            this.btnGuardar.TabIndex = 13;
-            this.btnGuardar.Text = "Crear Cuenta";
+            this.btnGuardar.Size = new System.Drawing.Size(243, 45);
+            this.btnGuardar.TabIndex = 15;
+            this.btnGuardar.Text = "Agregar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtEstado
             // 
             this.txtEstado.BorderRadius = 10;
             this.txtEstado.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEstado.DefaultText = "Estado";
+            this.txtEstado.DefaultText = "";
             this.txtEstado.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtEstado.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEstado.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -330,17 +340,18 @@
             this.txtEstado.MaxLength = 250;
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.PlaceholderText = "Calle, Número exterior/interior, Colonia";
+            this.txtEstado.PlaceholderText = "Estado";
             this.txtEstado.SelectedText = "";
             this.txtEstado.Size = new System.Drawing.Size(254, 48);
-            this.txtEstado.TabIndex = 14;
+            this.txtEstado.TabIndex = 8;
             this.txtEstado.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged_2);
+            this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtCodigoPostal
             // 
             this.txtCodigoPostal.BorderRadius = 10;
             this.txtCodigoPostal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCodigoPostal.DefaultText = "Código Postal";
+            this.txtCodigoPostal.DefaultText = "";
             this.txtCodigoPostal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtCodigoPostal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtCodigoPostal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -352,17 +363,18 @@
             this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigoPostal.MaxLength = 5;
             this.txtCodigoPostal.Name = "txtCodigoPostal";
-            this.txtCodigoPostal.PlaceholderText = "11 dígitos numéricos";
+            this.txtCodigoPostal.PlaceholderText = "Código Postal";
             this.txtCodigoPostal.SelectedText = "";
             this.txtCodigoPostal.Size = new System.Drawing.Size(254, 48);
-            this.txtCodigoPostal.TabIndex = 15;
+            this.txtCodigoPostal.TabIndex = 10;
             this.txtCodigoPostal.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged_1);
+            this.txtCodigoPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtSalario
             // 
             this.txtSalario.BorderRadius = 10;
             this.txtSalario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSalario.DefaultText = "Salario";
+            this.txtSalario.DefaultText = "";
             this.txtSalario.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtSalario.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtSalario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -374,16 +386,17 @@
             this.txtSalario.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalario.MaxLength = 5;
             this.txtSalario.Name = "txtSalario";
-            this.txtSalario.PlaceholderText = "11 dígitos numéricos";
+            this.txtSalario.PlaceholderText = "Salario";
             this.txtSalario.SelectedText = "";
             this.txtSalario.Size = new System.Drawing.Size(254, 48);
-            this.txtSalario.TabIndex = 17;
+            this.txtSalario.TabIndex = 11;
+            this.txtSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtPassword
             // 
             this.txtPassword.BorderRadius = 10;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.DefaultText = "Contraseña";
+            this.txtPassword.DefaultText = "";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -393,12 +406,13 @@
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Location = new System.Drawing.Point(290, 303);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPassword.MaxLength = 5;
+            this.txtPassword.MaxLength = 18;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PlaceholderText = "11 dígitos numéricos";
+            this.txtPassword.PlaceholderText = "Contraseña";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(254, 48);
-            this.txtPassword.TabIndex = 18;
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // cmbRol
             // 
@@ -413,20 +427,21 @@
             this.cmbRol.ItemHeight = 53;
             this.cmbRol.Items.AddRange(new object[] {
             "Rol",
-            "Usuario",
+            "Empleado",
             "Administrador"});
             this.cmbRol.Location = new System.Drawing.Point(640, 70);
             this.cmbRol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(255, 59);
             this.cmbRol.StartIndex = 0;
-            this.cmbRol.TabIndex = 19;
+            this.cmbRol.TabIndex = 6;
+            this.cmbRol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtClabe
             // 
             this.txtClabe.BorderRadius = 10;
             this.txtClabe.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtClabe.DefaultText = "Clabe Interbancaria";
+            this.txtClabe.DefaultText = "";
             this.txtClabe.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtClabe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtClabe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -436,18 +451,57 @@
             this.txtClabe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClabe.Location = new System.Drawing.Point(972, 191);
             this.txtClabe.Margin = new System.Windows.Forms.Padding(4);
-            this.txtClabe.MaxLength = 11;
+            this.txtClabe.MaxLength = 18;
             this.txtClabe.Name = "txtClabe";
-            this.txtClabe.PlaceholderText = "11 dígitos numéricos";
+            this.txtClabe.PlaceholderText = "Clabe Interbancaria (18 digitos)";
             this.txtClabe.SelectedText = "";
             this.txtClabe.Size = new System.Drawing.Size(254, 48);
-            this.txtClabe.TabIndex = 20;
+            this.txtClabe.TabIndex = 14;
+            this.txtClabe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClabe_KeyPress);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BorderRadius = 25;
+            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBack.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(131)))), ((int)(((byte)(112)))));
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(972, 307);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(243, 44);
+            this.btnBack.TabIndex = 18;
+            this.btnBack.Text = "Volver";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.BorderRadius = 25;
+            this.btnUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUsers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(131)))), ((int)(((byte)(112)))));
+            this.btnUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsers.ForeColor = System.Drawing.Color.White;
+            this.btnUsers.Location = new System.Drawing.Point(972, 359);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(243, 48);
+            this.btnUsers.TabIndex = 19;
+            this.btnUsers.Text = "Usuarios";
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // UIRegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 480);
+            this.Controls.Add(this.btnUsers);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtClabe);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.txtPassword);
@@ -466,9 +520,12 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.NuevoUsuario);
             this.Controls.Add(this.guna2Panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.HelpButton = true;
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UIRegistroUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UIRegistroUsuarios";
             this.Load += new System.EventHandler(this.UIRegistroUsuarios_Load);
             this.guna2Panel1.ResumeLayout(false);
@@ -501,5 +558,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2ComboBox cmbRol;
         private Guna.UI2.WinForms.Guna2TextBox txtClabe;
+        private Guna.UI2.WinForms.Guna2Button btnBack;
+        private Guna.UI2.WinForms.Guna2Button btnUsers;
     }
 }

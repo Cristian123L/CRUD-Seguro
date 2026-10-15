@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrudSeguro.Backend;
 using CrudSeguro.DTOs;
@@ -15,62 +7,56 @@ namespace Crud_Seguro
 {
     public partial class UIRegistroUsuarios : Form
     {
-        public UIRegistroUsuarios()
+        // VARIABLES GLOBALES
+        private readonly UsuarioService _usuarioService = new UsuarioService();
+        private UsuarioDTO _usuarioEdicion = null;
+
+        // CONSTRUCTOR Y CARGA INICIAL
+        public UIRegistroUsuarios(UsuarioDTO usuarioAEditar = null)
         {
             InitializeComponent();
+            _usuarioEdicion = usuarioAEditar;
         }
 
         private void UIRegistroUsuarios_Load(object sender, EventArgs e)
         {
-           
-        }
+            txtNombre.Focus();
 
-        private void NuevoUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Solo permite números y la tecla de borrar (Backspace)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (_usuarioEdicion != null)
             {
-                e.Handled = true; // Bloquea cualquier otra tecla
+                txtNombre.Text = _usuarioEdicion.Nombre;
+                txtPrimerApellido.Text = _usuarioEdicion.PrimerApellido;
+                txtSegundoApellido.Text = _usuarioEdicion.SegundoApellido;
+                txtEmail.Text = _usuarioEdicion.Email;
+                txtTelefono.Text = _usuarioEdicion.Telefono;
+                cmbRol.SelectedItem = _usuarioEdicion.Rol;
+                cmbCiudad.SelectedItem = _usuarioEdicion.Ciudad;
+                txtEstado.Text = _usuarioEdicion.Estado;
+                txtDireccion.Text = _usuarioEdicion.Direccion;
+                txtCodigoPostal.Text = _usuarioEdicion.CodigoPostal;
+                txtSalario.Text = _usuarioEdicion.Salario.ToString();
+
+                // Campos sensibles
+                txtPassword.Text = ""; // Por seguridad se limpia
+                txtRFC.Text = _usuarioEdicion.RFC;
+                txtNSS.Text = _usuarioEdicion.NSS;
+                txtClabe.Text = _usuarioEdicion.ClabeInterbancaria;
+
+                btnGuardar.Text = "Actualizar Cuenta";
             }
         }
 
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private readonly UsuarioService _usuarioService = new UsuarioService();
-
+        // EVENTO PRINCIPAL: GUARDAR / ACTUALIZAR
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //lblError.Visible = false;
+            // 1. Validación de llenado (Password opcional si es edición)
+            bool faltaPassword = (_usuarioEdicion == null) && string.IsNullOrWhiteSpace(txtPassword.Text);
 
-            // 1. Validación de llenado (Campos vacíos generales)
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtPrimerApellido.Text) ||
                 string.IsNullOrWhiteSpace(txtSegundoApellido.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                string.IsNullOrWhiteSpace(txtPassword.Text) ||
+                faltaPassword ||
                 string.IsNullOrWhiteSpace(txtEstado.Text) ||
                 string.IsNullOrWhiteSpace(txtDireccion.Text) ||
                 string.IsNullOrWhiteSpace(txtCodigoPostal.Text))
@@ -79,21 +65,21 @@ namespace Crud_Seguro
                 return;
             }
 
-            // 2. Validación de Listas Desplegables (ComboBox)
-            if (cmbRol.SelectedIndex == -1) // Roles obligatorios
+            // 2. Validación de Listas Desplegables
+            if (cmbRol.SelectedIndex == -1)
             {
                 MostrarError("Debe seleccionar si el rol es Administrador o Empleado.");
                 return;
             }
 
-            if (cmbCiudad.SelectedIndex <= 0) // Validar que no se quede en el texto guía "-- Ciudad --"
+            if (cmbCiudad.SelectedIndex == -1)
             {
                 MostrarError("Debe seleccionar una ciudad válida de la lista.");
                 return;
             }
 
-            // 3. Validación de Longitudes Mínimas, Exactas y Salario numérico
-            if (txtPassword.Text.Length < 6)
+            // 3. Validación de Longitudes y Formatos
+            if ((_usuarioEdicion == null || !string.IsNullOrWhiteSpace(txtPassword.Text)) && txtPassword.Text.Length < 6)
             {
                 MostrarError("La contraseña debe tener al menos 6 caracteres.");
                 return;
@@ -101,36 +87,49 @@ namespace Crud_Seguro
 
             if (txtTelefono.Text.Length != 10)
             {
-                MostrarError("El teléfono debe tener exactamente 10 dígitos.");
+                MostrarError("El teléfono debe contener exactamente 10 dígitos.");
                 return;
             }
 
             if (!decimal.TryParse(txtSalario.Text.Trim(), out decimal salarioValido) || salarioValido <= 0)
             {
-                MostrarError("Ingrese un salario numérico válido mayor a 0.");
+                MostrarError("Ingrese un salario numérico mayor a 0.");
                 return;
             }
 
-            // 4. Validación estricta de los 3 datos que serán encriptados en Azure
-            if (txtRFC.Text.Length < 12 || txtRFC.Text.Length > 13)
+            // 4. Validación estricta de campos cifrados (Haciéndolo insensible a mayúsculas)
+            bool rfcModificado = !txtRFC.Text.ToUpper().Contains("(CIFRADO)") && !txtRFC.Text.Contains("•");
+            bool nssModificado = !txtNSS.Text.ToUpper().Contains("(CIFRADO)") && !txtNSS.Text.Contains("•");
+            bool clabeModificada = !txtClabe.Text.ToUpper().Contains("(CIFRADO)") && !txtClabe.Text.Contains("•");
+
+            if (_usuarioEdicion == null || rfcModificado)
             {
-                MostrarError("El RFC debe tener 12 o 13 caracteres.");
-                return;
+                if (txtRFC.Text.Length < 12 || txtRFC.Text.Length > 13)
+                {
+                    MostrarError("El RFC debe contener entre 12 y 13 caracteres.");
+                    return;
+                }
             }
 
-            if (string.IsNullOrWhiteSpace(txtNSS.Text) || txtNSS.Text.Length != 11)
+            if (_usuarioEdicion == null || nssModificado)
             {
-                MostrarError("El Número de Seguridad Social (NSS) debe tener exactamente 11 dígitos.");
-                return;
+                if (string.IsNullOrWhiteSpace(txtNSS.Text) || txtNSS.Text.Length != 11)
+                {
+                    MostrarError("El NSS debe ser exactamente de 11 dígitos.");
+                    return;
+                }
             }
 
-            if (string.IsNullOrWhiteSpace(txtClabe.Text) || txtClabe.Text.Length != 18)
+            if (_usuarioEdicion == null || clabeModificada)
             {
-                MostrarError("La Clabe interbancaria debe tener exactamente 18 dígitos.");
-                return;
+                if (string.IsNullOrWhiteSpace(txtClabe.Text) || txtClabe.Text.Length != 18)
+                {
+                    MostrarError("La Clabe Interbancaria debe contener exactamente 18 dígitos.");
+                    return;
+                }
             }
 
-            // 5. Empaquetar en el DTO y llamar al Backend
+            // 5. Empaquetar en el DTO
             UsuarioDTO nuevoUsuario = new UsuarioDTO
             {
                 Nombre = txtNombre.Text.Trim(),
@@ -145,17 +144,33 @@ namespace Crud_Seguro
                 Direccion = txtDireccion.Text.Trim(),
                 CodigoPostal = txtCodigoPostal.Text.Trim(),
                 Salario = salarioValido,
-                RFC = txtRFC.Text.Trim().ToUpper(),
-                NSS = txtNSS.Text.Trim(),
-                ClabeInterbancaria = txtClabe.Text.Trim()
+                // Si no se modificaron, mantenemos el valor original oculto
+                RFC = (_usuarioEdicion != null && !rfcModificado) ? _usuarioEdicion.RFC : txtRFC.Text.Trim().ToUpper(),
+                NSS = (_usuarioEdicion != null && !nssModificado) ? _usuarioEdicion.NSS : txtNSS.Text.Trim(),
+                ClabeInterbancaria = (_usuarioEdicion != null && !clabeModificada) ? _usuarioEdicion.ClabeInterbancaria : txtClabe.Text.Trim()
             };
 
-            string resultado = _usuarioService.RegistrarUsuario(nuevoUsuario);
+            // 6. Enviar a Base de Datos
+            string resultado;
 
+            if (_usuarioEdicion == null)
+            {
+                resultado = _usuarioService.RegistrarUsuario(nuevoUsuario);
+            }
+            else
+            {
+                nuevoUsuario.IdUsuario = _usuarioEdicion.IdUsuario;
+                resultado = _usuarioService.ActualizarUsuario(nuevoUsuario);
+            }
+
+            // 7. Evaluar Respuesta
             if (resultado == "OK")
             {
-                MessageBox.Show("¡Usuario registrado exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close(); // O llama a tu método para limpiar cajas de texto
+                string accion = _usuarioEdicion == null ? "registrado" : "actualizado";
+                MessageBox.Show($"¡Usuario {accion} exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Con esto es suficiente, el UIMenuPrincipal original sigue esperando atrás
+                this.Close();
             }
             else
             {
@@ -163,25 +178,50 @@ namespace Crud_Seguro
             }
         }
 
+        // METODOS AUXILIARES Y EVENTOS DE UI
         private void MostrarError(string mensaje)
         {
-            //lblError.Text = mensaje;
-            //lblError.Visible = true;
+            MessageBox.Show(mensaje, "Aviso de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void guna2TextBox1_TextChanged_2(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-
+            this.Close(); // Cierra esta ventana y regresa fluidamente al menú
         }
 
-        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        private void txtClabe_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                btnGuardar.PerformClick();
+            }
         }
 
-        private void guna2TextBox2_TextChanged_1(object sender, EventArgs e)
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
 
+        private void NuevoUsuario_Click(object sender, EventArgs e) { }
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e) { }
+        private void guna2TextBox1_TextChanged_1(object sender, EventArgs e) { }
+        private void guna2TextBox1_TextChanged_2(object sender, EventArgs e) { }
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e) { }
+        private void guna2TextBox2_TextChanged_1(object sender, EventArgs e) { }
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e) { }
+        private void txtDireccion_TextChanged(object sender, EventArgs e) { }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            UIMenuPrincipal menu = new UIMenuPrincipal();
+            menu.Show();
+            this.Close();
         }
     }
 }
