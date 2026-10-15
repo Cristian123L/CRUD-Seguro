@@ -63,7 +63,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(267, 480);
+            this.guna2Panel1.Size = new System.Drawing.Size(300, 600);
             this.guna2Panel1.TabIndex = 16;
             // 
             // Title
@@ -71,19 +71,19 @@
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Title.Location = new System.Drawing.Point(23, 250);
+            this.Title.Location = new System.Drawing.Point(26, 312);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(199, 46);
+            this.Title.Size = new System.Drawing.Size(235, 54);
             this.Title.TabIndex = 0;
             this.Title.Text = "CrudSeguro";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Crud_Seguro.Properties.Resources.logoipsum_419;
-            this.pictureBox1.Location = new System.Drawing.Point(49, 178);
+            this.pictureBox1.Location = new System.Drawing.Point(55, 222);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(171, 88);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -92,9 +92,9 @@
             // 
             this.NuevoUsuario.AutoSize = true;
             this.NuevoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.NuevoUsuario.Location = new System.Drawing.Point(608, 7);
+            this.NuevoUsuario.Location = new System.Drawing.Point(684, 9);
             this.NuevoUsuario.Name = "NuevoUsuario";
-            this.NuevoUsuario.Size = new System.Drawing.Size(519, 48);
+            this.NuevoUsuario.Size = new System.Drawing.Size(625, 58);
             this.NuevoUsuario.TabIndex = 17;
             this.NuevoUsuario.Text = "Registro de Nuevo Usuario";
             this.NuevoUsuario.Click += new System.EventHandler(this.NuevoUsuario_Click);
@@ -111,12 +111,12 @@
             this.txtNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombre.Location = new System.Drawing.Point(289, 70);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(325, 88);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceholderText = "Nombre";
             this.txtNombre.SelectedText = "";
-            this.txtNombre.Size = new System.Drawing.Size(254, 48);
+            this.txtNombre.Size = new System.Drawing.Size(286, 60);
             this.txtNombre.TabIndex = 0;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -132,12 +132,12 @@
             this.txtPrimerApellido.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrimerApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPrimerApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrimerApellido.Location = new System.Drawing.Point(290, 131);
-            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrimerApellido.Location = new System.Drawing.Point(326, 164);
+            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.PlaceholderText = "Primer Apellido";
             this.txtPrimerApellido.SelectedText = "";
-            this.txtPrimerApellido.Size = new System.Drawing.Size(254, 48);
+            this.txtPrimerApellido.Size = new System.Drawing.Size(286, 60);
             this.txtPrimerApellido.TabIndex = 1;
             this.txtPrimerApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -153,12 +153,12 @@
             this.txtSegundoApellido.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSegundoApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSegundoApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSegundoApellido.Location = new System.Drawing.Point(289, 191);
-            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSegundoApellido.Location = new System.Drawing.Point(325, 239);
+            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.PlaceholderText = "Segundo Apellido";
             this.txtSegundoApellido.SelectedText = "";
-            this.txtSegundoApellido.Size = new System.Drawing.Size(254, 48);
+            this.txtSegundoApellido.Size = new System.Drawing.Size(286, 60);
             this.txtSegundoApellido.TabIndex = 2;
             this.txtSegundoApellido.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             this.txtSegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -175,12 +175,12 @@
             this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(289, 247);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Location = new System.Drawing.Point(325, 309);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PlaceholderText = "Email";
             this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(254, 48);
+            this.txtEmail.Size = new System.Drawing.Size(286, 60);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -196,13 +196,13 @@
             this.txtTelefono.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTelefono.Location = new System.Drawing.Point(289, 359);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefono.Location = new System.Drawing.Point(325, 449);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PlaceholderText = "Teléfono (10 digitos)";
             this.txtTelefono.SelectedText = "";
-            this.txtTelefono.Size = new System.Drawing.Size(254, 48);
+            this.txtTelefono.Size = new System.Drawing.Size(286, 60);
             this.txtTelefono.TabIndex = 5;
             this.txtTelefono.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged_1);
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -219,13 +219,13 @@
             this.txtNSS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNSS.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNSS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNSS.Location = new System.Drawing.Point(972, 131);
-            this.txtNSS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNSS.Location = new System.Drawing.Point(1094, 164);
+            this.txtNSS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNSS.MaxLength = 11;
             this.txtNSS.Name = "txtNSS";
             this.txtNSS.PlaceholderText = "NSS (11 digitos)";
             this.txtNSS.SelectedText = "";
-            this.txtNSS.Size = new System.Drawing.Size(254, 48);
+            this.txtNSS.Size = new System.Drawing.Size(286, 60);
             this.txtNSS.TabIndex = 13;
             this.txtNSS.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             this.txtNSS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -243,13 +243,13 @@
             this.txtRFC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRFC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtRFC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRFC.Location = new System.Drawing.Point(971, 70);
-            this.txtRFC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRFC.Location = new System.Drawing.Point(1092, 88);
+            this.txtRFC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRFC.MaxLength = 13;
             this.txtRFC.Name = "txtRFC";
             this.txtRFC.PlaceholderText = "RFC (12 o 13 caracteres)";
             this.txtRFC.SelectedText = "";
-            this.txtRFC.Size = new System.Drawing.Size(254, 48);
+            this.txtRFC.Size = new System.Drawing.Size(286, 60);
             this.txtRFC.TabIndex = 12;
             this.txtRFC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -265,14 +265,14 @@
             this.txtDireccion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDireccion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDireccion.Location = new System.Drawing.Point(641, 247);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDireccion.Location = new System.Drawing.Point(721, 309);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDireccion.MaxLength = 250;
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.PlaceholderText = "Dirección";
             this.txtDireccion.SelectedText = "";
-            this.txtDireccion.Size = new System.Drawing.Size(254, 48);
+            this.txtDireccion.Size = new System.Drawing.Size(286, 60);
             this.txtDireccion.TabIndex = 9;
             this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -287,7 +287,7 @@
             this.cmbCiudad.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbCiudad.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbCiudad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbCiudad.ItemHeight = 53;
+            this.cmbCiudad.ItemHeight = 45;
             this.cmbCiudad.Items.AddRange(new object[] {
             "Ciudad",
             "Uriangato ",
@@ -296,10 +296,10 @@
             "León",
             "Celaya",
             "Irapuato"});
-            this.cmbCiudad.Location = new System.Drawing.Point(641, 131);
+            this.cmbCiudad.Location = new System.Drawing.Point(721, 164);
             this.cmbCiudad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCiudad.Name = "cmbCiudad";
-            this.cmbCiudad.Size = new System.Drawing.Size(255, 59);
+            this.cmbCiudad.Size = new System.Drawing.Size(286, 51);
             this.cmbCiudad.StartIndex = 0;
             this.cmbCiudad.TabIndex = 7;
             this.cmbCiudad.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
@@ -315,10 +315,10 @@
             this.btnGuardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(131)))), ((int)(((byte)(112)))));
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(972, 250);
+            this.btnGuardar.Location = new System.Drawing.Point(1094, 312);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(243, 45);
+            this.btnGuardar.Size = new System.Drawing.Size(273, 56);
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Agregar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -335,14 +335,14 @@
             this.txtEstado.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEstado.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEstado.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEstado.Location = new System.Drawing.Point(641, 191);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEstado.Location = new System.Drawing.Point(721, 239);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEstado.MaxLength = 250;
             this.txtEstado.Multiline = true;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.PlaceholderText = "Estado";
             this.txtEstado.SelectedText = "";
-            this.txtEstado.Size = new System.Drawing.Size(254, 48);
+            this.txtEstado.Size = new System.Drawing.Size(286, 60);
             this.txtEstado.TabIndex = 8;
             this.txtEstado.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged_2);
             this.txtEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -359,13 +359,13 @@
             this.txtCodigoPostal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCodigoPostal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCodigoPostal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCodigoPostal.Location = new System.Drawing.Point(641, 303);
-            this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigoPostal.Location = new System.Drawing.Point(721, 379);
+            this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCodigoPostal.MaxLength = 5;
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.PlaceholderText = "Código Postal";
             this.txtCodigoPostal.SelectedText = "";
-            this.txtCodigoPostal.Size = new System.Drawing.Size(254, 48);
+            this.txtCodigoPostal.Size = new System.Drawing.Size(286, 60);
             this.txtCodigoPostal.TabIndex = 10;
             this.txtCodigoPostal.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged_1);
             this.txtCodigoPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -382,13 +382,13 @@
             this.txtSalario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSalario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSalario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSalario.Location = new System.Drawing.Point(641, 359);
-            this.txtSalario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSalario.Location = new System.Drawing.Point(721, 449);
+            this.txtSalario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSalario.MaxLength = 5;
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.PlaceholderText = "Salario";
             this.txtSalario.SelectedText = "";
-            this.txtSalario.Size = new System.Drawing.Size(254, 48);
+            this.txtSalario.Size = new System.Drawing.Size(286, 60);
             this.txtSalario.TabIndex = 11;
             this.txtSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -404,13 +404,13 @@
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(290, 303);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Location = new System.Drawing.Point(326, 379);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.MaxLength = 18;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderText = "Contraseña";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(254, 48);
+            this.txtPassword.Size = new System.Drawing.Size(286, 60);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -424,15 +424,15 @@
             this.cmbRol.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbRol.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbRol.ItemHeight = 53;
+            this.cmbRol.ItemHeight = 45;
             this.cmbRol.Items.AddRange(new object[] {
             "Rol",
             "Empleado",
             "Administrador"});
-            this.cmbRol.Location = new System.Drawing.Point(640, 70);
+            this.cmbRol.Location = new System.Drawing.Point(720, 88);
             this.cmbRol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(255, 59);
+            this.cmbRol.Size = new System.Drawing.Size(286, 51);
             this.cmbRol.StartIndex = 0;
             this.cmbRol.TabIndex = 6;
             this.cmbRol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -449,13 +449,13 @@
             this.txtClabe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClabe.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtClabe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtClabe.Location = new System.Drawing.Point(972, 191);
-            this.txtClabe.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClabe.Location = new System.Drawing.Point(1094, 239);
+            this.txtClabe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtClabe.MaxLength = 18;
             this.txtClabe.Name = "txtClabe";
             this.txtClabe.PlaceholderText = "Clabe Interbancaria (18 digitos)";
             this.txtClabe.SelectedText = "";
-            this.txtClabe.Size = new System.Drawing.Size(254, 48);
+            this.txtClabe.Size = new System.Drawing.Size(286, 60);
             this.txtClabe.TabIndex = 14;
             this.txtClabe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClabe_KeyPress);
             // 
@@ -469,10 +469,10 @@
             this.btnBack.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(131)))), ((int)(((byte)(112)))));
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(972, 307);
+            this.btnBack.Location = new System.Drawing.Point(1094, 384);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(243, 44);
+            this.btnBack.Size = new System.Drawing.Size(273, 55);
             this.btnBack.TabIndex = 18;
             this.btnBack.Text = "Volver";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -487,19 +487,19 @@
             this.btnUsers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(131)))), ((int)(((byte)(112)))));
             this.btnUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.White;
-            this.btnUsers.Location = new System.Drawing.Point(972, 359);
+            this.btnUsers.Location = new System.Drawing.Point(1094, 449);
             this.btnUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(243, 48);
+            this.btnUsers.Size = new System.Drawing.Size(273, 60);
             this.btnUsers.TabIndex = 19;
             this.btnUsers.Text = "Usuarios";
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // UIRegistroUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 480);
+            this.ClientSize = new System.Drawing.Size(1578, 600);
             this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtClabe);
@@ -522,7 +522,6 @@
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.HelpButton = true;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UIRegistroUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

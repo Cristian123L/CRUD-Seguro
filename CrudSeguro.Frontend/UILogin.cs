@@ -155,5 +155,18 @@ namespace Crud_Seguro
             frmRegistro.ShowDialog();
             this.Show();
         }
+
+        private void linkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UIRegistroUsuarios ventanaRegistro = new UIRegistroUsuarios();
+            ventanaRegistro.StartPosition = FormStartPosition.CenterScreen;
+            ventanaRegistro.Show();
+            this.Hide();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

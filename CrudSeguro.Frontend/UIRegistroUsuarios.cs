@@ -186,7 +186,11 @@ namespace Crud_Seguro
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cierra esta ventana y regresa fluidamente al menú
+            
+            UILogin ventanaLogin = new UILogin();
+            ventanaLogin.Show();
+            this.Close();
+
         }
 
         private void txtClabe_KeyPress(object sender, KeyPressEventArgs e)
