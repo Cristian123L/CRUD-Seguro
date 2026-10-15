@@ -63,7 +63,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(300, 600);
+            this.guna2Panel1.Size = new System.Drawing.Size(300, 595);
             this.guna2Panel1.TabIndex = 16;
             // 
             // Title
@@ -499,7 +499,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1578, 600);
+            this.ClientSize = new System.Drawing.Size(1437, 595);
             this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtClabe);

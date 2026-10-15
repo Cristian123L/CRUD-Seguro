@@ -101,7 +101,8 @@ namespace Crud_Seguro
         // SALIDA
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            SesionActual.CerrarSesion();
+            UIRegistroUsuarios ventanaLogin = new UIRegistroUsuarios();
+            ventanaLogin.Show();
             this.Close();
         }
     }
